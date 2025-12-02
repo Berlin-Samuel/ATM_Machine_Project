@@ -34,7 +34,7 @@ package check;
 
 public class HelloWorld {
 	public static void main(String[] args) {
-		System.out.println("54564152");
+		System.out.println("5456152");
 	}
 
 }
