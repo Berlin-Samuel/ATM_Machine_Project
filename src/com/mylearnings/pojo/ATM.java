@@ -37,10 +37,6 @@ public class ATM {
 	private double depositAmount;
 	private double withdrawAmount;
 
-	// Default Constructor
-	public ATM() {
-
-	}
 	// getter and setter
 
 	public double getBalance() {

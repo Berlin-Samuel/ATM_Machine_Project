@@ -38,20 +38,23 @@ import com.mylearnings.service.ATMOperation;
 import com.mylearnings.service.ATMOperationInmplement;
 
 public class ATMDriver {
+	private boolean running = true;
+	private int atmNumber = 12345;
+	private int atmPin = 123;
+
 	public static void main(String[] args) {
+		ATMDriver driverObj = new ATMDriver();
 		ATMOperation opAtm = new ATMOperationInmplement();
-		int atmNumber = 12345;
-		int atmPin = 123;
 		System.out.println("Welcome To ATM Machine");
-		System.out.println("==============");
+		System.out.println("==========================================");
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter the ATM Number : ");
 		int atmnumber = scan.nextInt();
 		System.out.print("Enter the ATM Pin : ");
 		int atmpin = scan.nextInt();
-		if ((atmNumber == atmnumber) && (atmPin == atmpin)) {
-			boolean running = true;
-			while (running) {
+		System.out.println("==========================================");
+		if ((driverObj.atmNumber == atmnumber) && (driverObj.atmPin == atmpin)) {
+			while (driverObj.running) {
 				System.out.println(
 						"1.View Available Balance\n2.Withdraw Amount\n3.Deposit Amount\n4.View Ministatement\n5.Exit");
 				System.out.println("Enter Choice :");
@@ -74,11 +77,13 @@ public class ATMDriver {
 					opAtm.viewMiniStatement();
 					break;
 				case 5:
-					System.out.println("Collect your ATM Card\n Thank You for Using this ATM");
+					System.out.println("Collect your ATM Card\nThank You for Using this ATM");
+					System.out.println("==========================================");
 					System.exit(0);
 					break;
 				default:
 					System.out.println("Please enter the correct choice");
+					System.out.println("==========================================");
 				}
 			}
 		} else {
