@@ -49,7 +49,7 @@ public class ATMOperationInmplement implements ATMOperation {
 
 	@Override
 	public void withdrawAmount(double withdrawAmount) {
-		if (withdrawAmount % 500 == 0) {
+		if ((withdrawAmount % 500 == 0) && (withdrawAmount > 0)) {
 			if (withdrawAmount < atm.getBalance()) {
 				ministatement.put(withdrawAmount, " Amount Withdrawn");
 				System.out.println("Collect the Cash " + withdrawAmount);
@@ -61,21 +61,28 @@ public class ATMOperationInmplement implements ATMOperation {
 			}
 		} else {
 			System.out.println("Please enter the amount multiple of 500");
+			System.out.println("==========================================");
 		}
 	}
 
 	@Override
 	public void depositAmount(double depositAmount) {
-		ministatement.put(depositAmount, " Amount Deposited");
-		System.out.println(depositAmount + " Deposited Successfully !!!!");
-		atm.setBalance(atm.getBalance() + depositAmount);
-		viewBalance();
+		if (((depositAmount > 0) && (depositAmount % 100 == 0) || (depositAmount % 200 == 0)
+				|| (depositAmount % 500 == 0))) {
+			ministatement.put(depositAmount, " Amount Deposited");
+			System.out.println(depositAmount + " Deposited Successfully !!!!");
+			atm.setBalance(atm.getBalance() + depositAmount);
+			viewBalance();
+		} else {
+			System.out.println("This ATM will receive only 100,200 and 500 ");
+			System.out.println("==========================================");
+		}
 	}
 
 	@Override
 	public void viewMiniStatement() {
 		for (Map.Entry<Double, String> min : ministatement.entrySet()) {
-			System.out.println(min.getKey() +" "+ min.getValue());
+			System.out.println(min.getKey() + " " + min.getValue());
 
 		}
 		System.out.println("==========================================");

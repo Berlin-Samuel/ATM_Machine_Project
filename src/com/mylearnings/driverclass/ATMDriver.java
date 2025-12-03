@@ -57,6 +57,7 @@ public class ATMDriver {
 			while (driverObj.running) {
 				System.out.println(
 						"1.View Available Balance\n2.Withdraw Amount\n3.Deposit Amount\n4.View Ministatement\n5.Exit");
+				System.out.println("==========================================");
 				System.out.println("Enter Choice :");
 				int choice = scan.nextInt();
 				switch (choice) {
