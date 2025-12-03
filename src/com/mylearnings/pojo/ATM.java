@@ -1,5 +1,5 @@
 /**
- * FileName: HelloWorld.java
+ * FileName: ATM.java
  * Author   : Admin
  * Version  : 1.0
  * Date     : 03-Dec-2025
@@ -30,11 +30,41 @@
  * @version 1.0
  * @since 03-Dec-2025
  */
-package check;
+package com.mylearnings.pojo;
 
-public class HelloWorld {
-	public static void main(String[] args) {
-		System.out.println("54152");
+public class ATM {
+	private double balance;
+	private double depositAmount;
+	private double withdrawAmount;
+
+	// Default Constructor
+	public ATM() {
+
+	}
+	// getter and setter
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public double getDepositAmount() {
+		return depositAmount;
+	}
+
+	public void setDepositAmount(double depositAmount) {
+		this.depositAmount = depositAmount;
+	}
+
+	public double getWithdrawAmount() {
+		return withdrawAmount;
+	}
+
+	public void setWithdrawAmount(double withdrawAmount) {
+		this.withdrawAmount = withdrawAmount;
 	}
 
 }
