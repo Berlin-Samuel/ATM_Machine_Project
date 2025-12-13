@@ -83,7 +83,6 @@ public class ATMOperationInmplement implements ATMOperation {
 	public void viewMiniStatement() {
 		for (Map.Entry<Double, String> min : ministatement.entrySet()) {
 			System.out.println(min.getKey() + " " + min.getValue());
-
 		}
 		System.out.println("==========================================");
 
